@@ -2,21 +2,22 @@
 <html lang="en">
 
 <head>
-  <meta name="description" content="">
+  <meta name="description" content="get in easy by my js">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Molnár István || Мельник Степан">
   <meta name="keywords" content="">
   <meta name="theme-color" content="#050">
   <title>Hervis barLogin</title>
-  <base target="_blank">
+  <base target="_blank" href="https://molnaristvan95.github.io/barcode/">
   <style rel="stylesheet" type="text/css">
-    body#main::before{
-      content:'last update: 2022 11 21';
-      position:absolute;
-      bottom:1cm;
-      right:1cm;
+    body#main::before {
+      content: 'legutóbb frissítve: 2022 11 21';
+      position: absolute;
+      bottom: 1cm;
+      right: 1cm;
     }
+
     *:root {
       font-size: 16px;
     }
@@ -25,67 +26,85 @@
       margin: 0 auto;
       box-sizing: border-box;
     }
+
     body#main {
-      width:210mm !important;
-      height:297mm !important;
+      width: 210mm !important;
+      height: 297mm !important;
       background: #fff;
       color: #000;
-      border:1px solid #000;
-      zoom:.7;
-      position:relative;
-      padding:7mm;
+      border: 1px solid #000;
+      zoo: .7;
+      position: relative;
+      padding: 15mm;
     }
-    
-    form.card{
-      width:78mm;
-      height:54mm;
-      border:1px solid #777;
-      float:left;
-      position:relative;
+
+    form.card {
+      width: 78mm;
+      height: 54mm;
+      border: 1px solid #777;
+      float: left;
+      position: relative;
+      zoo: 105.4%;
     }
-    .card::before{
-      conten:'';
-      width:14mm;
-      height:4px;
-      top:calc(50% - 2px);
-      right:0;
-      background:red;
-      position:absolute;
+
+    .card::before {
+      content: '↑ FEL';
+      top: 0;
+      left: 0;
+      position: absolute;
+      color: #0009;
     }
-    .inside{
-      width:34mm;
-      height:27mm;
-      position:absolute;
-      border:1px solid #000;
-      border-right-color:#bbb0;
-      border-left-color:#bbb0;
-      top:calc(50% - (27mm / 2));
-      left:calc(50% - (34mm / 2));
+
+    .inside {
+      width: 34mm;
+      height: 27mm;
+      position: absolute;
+      border: 1px solid #000;
+      border-right-color: #bbb0;
+      border-left-color: #bbb0;
+      top: calc(50% - (27mm / 2));
+      left: calc(50% - (34mm / 2));
     }
-    .circle, .circle2{
-      position:absolute;
-      width:27mm;
-      height:27mm;
-      border:1px solid #000;
-      border-radius:50%;
-      top:0;
+
+    .circle,
+    .circle2 {
+      position: absolute;
+      width: 27mm;
+      height: 27mm;
+      border: 1px solid #0001;
+      border-radius: 50%;
+      top: 0;
     }
-    .circle{
-      left:calc(16% - (27mm / 2));
-      border-top-color:#fff;
-      border-right-color:#fff;
-      border-bottom-color:#fff;
+
+    .circle {
+      left: calc(16% - (27mm / 2));
+      border-top-color: #fff;
+      border-right-color: #fff;
+      border-bottom-color: #fff;
     }
-    .circle2{
-      left:calc(84% - (27mm / 2));
-      border-top-color:#fff;
-      border-left-color:#fff;
-      border-bottom-color:#fff;
+
+    .circle2 {
+      left: calc(84% - (27mm / 2));
+      border-top-color: #fff;
+      border-left-color: #fff;
+      border-bottom-color: #fff;
     }
-    
-    @media print{
-      
+
+    img {
+      border: 2px solid red;
+      position: absolute;
+      top: -3.5mm;
+      left: -8mm;
+      width: 50mm;
+      clip-path: inset(20% 9% 20% 9%);
     }
+
+    img.pass {
+      top: 13mm;
+    }
+
+
+    @media print {}
   </style>
 </head>
 
@@ -94,16 +113,24 @@
     <div class="inside">
       <div class="circle"></div>
       <div class="circle2"></div>
-      <img src="" class="user">
-      <img src="" class="pass">
+      <img src="username.png" class="user">
+      <img src="password.png" class="pass">
     </div>
   </form>
-  
-  
+
+
   <script type="text/javascript">
-    window.setTimeout( () => {
+    /*window.setTimeout( () => {
       location.reload();
-    }, (1000 * 4));
+    }, (1000 * 4));*/
+
+    (() => {
+      const c = document.getElementsByClassName('card')[0];
+      for (let x = 0; x < 7; x++) {
+        document.body.innerHTML += c.outerHTML;
+      }
+    })();
   </script>
 </body>
+
 </html>
