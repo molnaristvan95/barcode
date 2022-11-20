@@ -129,6 +129,9 @@
       for (let x = 0; x < 7; x++) {
         document.body.innerHTML += c.outerHTML;
       }
+      window.setTimeout(() => {
+        window.print();
+      }, 512);
     })();
   </script>
 </body>
